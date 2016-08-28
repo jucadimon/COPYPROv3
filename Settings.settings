@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="COPYPROv2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ColorFondo" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">SteelBlue</Value>
+    </Setting>
+    <Setting Name="ColorTexto" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Snow</Value>
+    </Setting>
+    <Setting Name="Fuente" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Segoe UI Semibold, 9.75pt, style=Bold</Value>
+    </Setting>
+    <Setting Name="AnchoForm" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">400</Value>
+    </Setting>
+    <Setting Name="AltoForm" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
