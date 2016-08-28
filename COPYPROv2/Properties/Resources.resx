@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,69 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InfoTitulo" xml:space="preserve">
+    <value>I N F O R M A C I O N</value>
+  </data>
+  <data name="CloseButtonText" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="InfoText" xml:space="preserve">
+    <value>COPYPRO v3
+
+INSTRUCCIONES DE USO: 
+Localice la informacion que desea escribir desde un archivo, pagina web, u otro programa, a continuación abra el programa COPYPRO y escriba dentro de la caja de texto y al final de clic en el boton exportar a un archivo de texto a su escritorio.
+Al presionar el boton ExportarTXT se crea un archivo de texto multiple con el historial del contenido de la caja de texto.
+Puede dar clic en el boton limpiar para borrar todo el contenido de la caja de texto.
+COPYPRO: es un pequeño proyecto sobre un programa para hacer resumenes a mano, es un editor de texto minimalista que te permite ir guardando informacion por lotes de por ej: una cancion, un resumen de una novela literaria, codigo fuente, etc; con eL programa podrás leer y escribir al mismo tiempo... o esa es la idea.
+Puede utilizar el programa de cualquier forma que se le ocurra, por favor, si encuentra utilidad, escribanos a nuestro correo, con asunto copypro y agregue la pagina del programa en la red social facebook: COPYPRO
+Para donativos :v escribanos al correo.
+
+SOFTWARE DE ESCRITURA RAPIDA
+
+SOFTWARE CREADO POR:
+JUANCARLOS DIAZ MONTIEL
+ESTUDIANTE INGENIERIA CIVIL
+UNIVERSIDAD DE SUCRE
+2016
+CEL: 3016922644
+CORREO: jucadimon@hotmail.com
+WEB: http://ingenieria-civil-y-pi.blogspot.com.co/ 
+
+Unete al mejor grupo de programación en facebook: '.NET PROGRAMADORES'</value>
+  </data>
+  <data name="ArchivosDeTextoFilter" xml:space="preserve">
+    <value>Archivos de texto (*.txt)|*.txt</value>
+  </data>
+  <data name="TituloAbrirArchivoDeTexto" xml:space="preserve">
+    <value>Apertura de archivo de texto.</value>
+  </data>
+  <data name="TituloGuardarArchivoDeTexto" xml:space="preserve">
+    <value>Guardar Archivo de Texto</value>
+  </data>
+  <data name="ArchivoPdfFilter" xml:space="preserve">
+    <value>Archivo Pdf (.pdf) |*.pdf</value>
+  </data>
+  <data name="ExportarPdfTitle" xml:space="preserve">
+    <value>Exportar a Pdf</value>
+  </data>
+  <data name="ExportacionExitosa" xml:space="preserve">
+    <value>Exportación exitosa!</value>
+  </data>
+  <data name="AcceptButtonText" xml:space="preserve">
+    <value>ACEPTAR</value>
+  </data>
+  <data name="MensajeTitulo" xml:space="preserve">
+    <value>MENSAJE</value>
+  </data>
+  <data name="SeleccioneArchivoDeTexto" xml:space="preserve">
+    <value>Seleccione un archivo de texto</value>
+  </data>
+  <data name="MensajeVuelvaPronto" xml:space="preserve">
+    <value>Va a salir del programa, vuelva pronto!</value>
+  </data>
 </root>
