@@ -39,6 +39,7 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbVainilla = new System.Windows.Forms.RadioButton();
             this.rbNormal = new System.Windows.Forms.RadioButton();
             this.rbGris = new System.Windows.Forms.RadioButton();
             this.rbRadar = new System.Windows.Forms.RadioButton();
@@ -56,10 +57,9 @@
             this.aTxtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aPdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.label5 = new System.Windows.Forms.Label();
-            this.rbVainilla = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -93,7 +93,7 @@
             this.btnInfo.TabIndex = 1;
             this.btnInfo.Text = "INFO";
             this.btnInfo.UseVisualStyleBackColor = true;
-            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
+            this.btnInfo.Click += new System.EventHandler(this.MostrarInfo_Click);
             // 
             // btnLimpiar
             // 
@@ -105,7 +105,7 @@
             this.btnLimpiar.TabIndex = 3;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            this.btnLimpiar.Click += new System.EventHandler(this.LimpiarTexto_Click);
             // 
             // txtCaja
             // 
@@ -127,7 +127,6 @@
             this.txtCaja.TabIndex = 4;
             this.txtCaja.TabStop = false;
             this.txtCaja.Text = "Escriba aquí...";
-            this.txtCaja.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCaja_KeyPress);
             // 
             // label2
             // 
@@ -191,7 +190,7 @@
             this.btnSalir.TabIndex = 9;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.Salir_Click);
             // 
             // groupBox1
             // 
@@ -211,6 +210,17 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
+            // rbVainilla
+            // 
+            this.rbVainilla.AutoSize = true;
+            this.rbVainilla.Location = new System.Drawing.Point(348, 18);
+            this.rbVainilla.Name = "rbVainilla";
+            this.rbVainilla.Size = new System.Drawing.Size(56, 16);
+            this.rbVainilla.TabIndex = 6;
+            this.rbVainilla.Text = "Vainilla";
+            this.rbVainilla.UseVisualStyleBackColor = true;
+            this.rbVainilla.CheckedChanged += new System.EventHandler(this.radioTheme_CheckedChanged);
+            // 
             // rbNormal
             // 
             this.rbNormal.AutoSize = true;
@@ -222,7 +232,7 @@
             this.rbNormal.TabStop = true;
             this.rbNormal.Text = "Celestial";
             this.rbNormal.UseVisualStyleBackColor = true;
-            this.rbNormal.CheckedChanged += new System.EventHandler(this.rbNormal_CheckedChanged);
+            this.rbNormal.CheckedChanged += new System.EventHandler(this.radioTheme_CheckedChanged);
             // 
             // rbGris
             // 
@@ -233,7 +243,7 @@
             this.rbGris.TabIndex = 4;
             this.rbGris.Text = "Gris";
             this.rbGris.UseVisualStyleBackColor = true;
-            this.rbGris.CheckedChanged += new System.EventHandler(this.rbGris_CheckedChanged);
+            this.rbGris.CheckedChanged += new System.EventHandler(this.radioTheme_CheckedChanged);
             // 
             // rbRadar
             // 
@@ -244,7 +254,7 @@
             this.rbRadar.TabIndex = 3;
             this.rbRadar.Text = "Radar";
             this.rbRadar.UseVisualStyleBackColor = true;
-            this.rbRadar.CheckedChanged += new System.EventHandler(this.rbRadar_CheckedChanged);
+            this.rbRadar.CheckedChanged += new System.EventHandler(this.radioTheme_CheckedChanged);
             // 
             // rbCereza
             // 
@@ -255,7 +265,7 @@
             this.rbCereza.TabIndex = 2;
             this.rbCereza.Text = "Cereza";
             this.rbCereza.UseVisualStyleBackColor = true;
-            this.rbCereza.CheckedChanged += new System.EventHandler(this.rbCereza_CheckedChanged);
+            this.rbCereza.CheckedChanged += new System.EventHandler(this.radioTheme_CheckedChanged);
             // 
             // rbJarvis
             // 
@@ -266,7 +276,7 @@
             this.rbJarvis.TabIndex = 1;
             this.rbJarvis.Text = "Jarvis";
             this.rbJarvis.UseVisualStyleBackColor = true;
-            this.rbJarvis.CheckedChanged += new System.EventHandler(this.rbJarvis_CheckedChanged);
+            this.rbJarvis.CheckedChanged += new System.EventHandler(this.radioTheme_CheckedChanged);
             // 
             // rbIronMan
             // 
@@ -277,7 +287,7 @@
             this.rbIronMan.TabIndex = 0;
             this.rbIronMan.Text = "IronMan";
             this.rbIronMan.UseVisualStyleBackColor = true;
-            this.rbIronMan.CheckedChanged += new System.EventHandler(this.rbIronMan_CheckedChanged);
+            this.rbIronMan.CheckedChanged += new System.EventHandler(this.radioTheme_CheckedChanged);
             // 
             // label3
             // 
@@ -287,7 +297,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 576);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(485, 15);
+            this.label3.Size = new System.Drawing.Size(482, 15);
             this.label3.TabIndex = 11;
             this.label3.Text = "Software de escritura básica y rápida. CopyRight TM 2016. Todos los derechos rese" +
     "rvados. ";
@@ -322,30 +332,30 @@
             // 
             this.abrirTxtToolStripMenuItem.AutoToolTip = true;
             this.abrirTxtToolStripMenuItem.Name = "abrirTxtToolStripMenuItem";
-            this.abrirTxtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.abrirTxtToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.abrirTxtToolStripMenuItem.Text = "Abrir txt";
             this.abrirTxtToolStripMenuItem.Click += new System.EventHandler(this.abrirTxtToolStripMenuItem_Click);
             // 
             // limpiarToolStripMenuItem
             // 
             this.limpiarToolStripMenuItem.Name = "limpiarToolStripMenuItem";
-            this.limpiarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.limpiarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.limpiarToolStripMenuItem.Text = "Limpiar";
-            this.limpiarToolStripMenuItem.Click += new System.EventHandler(this.limpiarToolStripMenuItem_Click);
+            this.limpiarToolStripMenuItem.Click += new System.EventHandler(this.LimpiarTexto_Click);
             // 
             // infoToolStripMenuItem
             // 
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.infoToolStripMenuItem.Text = "Info";
-            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.MostrarInfo_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.Salir_Click);
             // 
             // exportarToolStripMenuItem
             // 
@@ -361,14 +371,14 @@
             // aTxtToolStripMenuItem
             // 
             this.aTxtToolStripMenuItem.Name = "aTxtToolStripMenuItem";
-            this.aTxtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aTxtToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aTxtToolStripMenuItem.Text = "A txt";
             this.aTxtToolStripMenuItem.Click += new System.EventHandler(this.aTxtToolStripMenuItem_Click);
             // 
             // aPdfToolStripMenuItem
             // 
             this.aPdfToolStripMenuItem.Name = "aPdfToolStripMenuItem";
-            this.aPdfToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aPdfToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aPdfToolStripMenuItem.Text = "A pdf";
             this.aPdfToolStripMenuItem.Click += new System.EventHandler(this.aPdfToolStripMenuItem_Click);
             // 
@@ -384,10 +394,9 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "TEMAS:";
             // 
-            // openFileDialog1
+            // openFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // label5
             // 
@@ -400,17 +409,6 @@
             this.label5.Size = new System.Drawing.Size(138, 15);
             this.label5.TabIndex = 14;
             this.label5.Text = ".NET PROGRAMADORES";
-            // 
-            // rbVainilla
-            // 
-            this.rbVainilla.AutoSize = true;
-            this.rbVainilla.Location = new System.Drawing.Point(348, 18);
-            this.rbVainilla.Name = "rbVainilla";
-            this.rbVainilla.Size = new System.Drawing.Size(57, 16);
-            this.rbVainilla.TabIndex = 6;
-            this.rbVainilla.Text = "Vainilla";
-            this.rbVainilla.UseVisualStyleBackColor = true;
-            this.rbVainilla.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // FormCopypro
             // 
@@ -443,7 +441,6 @@
             this.Opacity = 0.75D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "COPYPRO v2";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCopypro_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -482,8 +479,8 @@
         private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aTxtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aPdfToolStripMenuItem;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem limpiarToolStripMenuItem;
         private System.Windows.Forms.Label label5;
